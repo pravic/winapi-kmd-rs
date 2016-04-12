@@ -1,0 +1,27 @@
+[package]
+name = "winapi-km"
+version = "0.1.0"
+description = "Windows Kernel Mode support library."
+
+authors = ["pravic <ehysta@gmail.com>"]
+readme = "README.md"
+license = "MIT"
+
+# libc = { version = "*", default_features = false }
+
+[lib]
+name = "km"
+crate-type = ["rlib"]
+
+[dependencies]
+core = { path= "../libcore", version="*" }
+alloc_system = { path="src/alloc" }
+collections = { path = "../libcollections" }
+
+[profile.release]
+opt-level = 3
+debug = true
+rpath = false
+lto = true
+debug-assertions = false
+codegen-units = 4

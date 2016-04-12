@@ -1,0 +1,15 @@
+[package]
+name = "alloc_system"
+version = "0.1.0"
+description = "Windows Kernel Mode support library."
+
+authors = ["pravic <ehysta@gmail.com>"]
+license = "MIT"
+
+[lib]
+name = "alloc_system"
+path = "alloc.rs"
+test = false
+
+[dependencies]
+core = { path= "../../../libcore" }
