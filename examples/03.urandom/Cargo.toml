@@ -1,0 +1,31 @@
+[package]
+name = "rust.drv.examples.urandom"
+description = "Windows kerneld driver sample which creates `\\\\.\\urandom` device."
+version = "0.1.0"
+authors = ["pravic <ehysta@gmail.com>"]
+readme = "../README.md"
+
+build = "build.rs"
+links = "ntoskrnl"
+
+[lib]
+path = "driver.rs"
+name = "urandom"
+crate-type = ["dylib"]
+
+test = false
+bench = false
+
+[profile.release]
+opt-level = 3
+debug = true
+rpath = false
+lto = true
+debug-assertions = false
+
+[dependencies]
+winapi-km   = { path = "../../../km", version="*" }
+core        = { path = "../../../libcore", version = "*" }
+collections = { path = "../../../libcollections" }
+alloc       = { path = "../../../liballoc" }
+alloc_system= { path = "../../src/alloc"}

@@ -1,0 +1,28 @@
+[package]
+name = "rust.drv.examples.unload"
+description = "Simple Windows kernel driver which can be unloaded."
+version = "0.1.0"
+authors = ["pravic <ehysta@gmail.com>"]
+readme = "../README.md"
+
+build = "build.rs"
+links = "ntoskrnl"
+
+[lib]
+path = "driver.rs"
+name = "unload"
+crate-type = ["dylib"]
+
+test = false
+bench = false
+
+[profile.release]
+opt-level = 3
+debug = true
+rpath = false
+lto = true
+debug-assertions = false
+
+[dependencies]
+winapi-km   = { path = "../../../km", version="*" }
+core        = { path = "../../../libcore", version = "*" }
