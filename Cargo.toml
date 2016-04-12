@@ -2,20 +2,21 @@
 name = "winapi-km"
 version = "0.1.0"
 description = "Windows Kernel Mode support library."
+keywords = ["windows", "ffi", "drivers", "wdk", "ddk"]
 
 authors = ["pravic <ehysta@gmail.com>"]
+repository = "https://github.com/pravic/winapi-km-rs"
+documentation = "http://pravic.github.io/winapi-km-rs"
 readme = "README.md"
 license = "MIT"
-
-# libc = { version = "*", default_features = false }
 
 [lib]
 name = "km"
 crate-type = ["rlib"]
 
 [dependencies]
-core = { path= "../libcore", version="*" }
 alloc_system = { path="src/alloc" }
+core = { path= "../libcore", version="*" }
 collections = { path = "../libcollections" }
 
 [profile.release]
