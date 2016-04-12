@@ -24,7 +24,7 @@ lto = true
 debug-assertions = false
 
 [dependencies]
-winapi-km   = { path = "../../../km", version="*" }
+winapi-kmd  = { path = "../../../km", version="*" }
 core        = { path = "../../../libcore", version = "*" }
 collections = { path = "../../../libcollections" }
 alloc       = { path = "../../../liballoc" }
