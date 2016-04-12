@@ -12,10 +12,9 @@ To compile you need the following:
 
 TBD.
 
-## Examples
+### Examples
 
-[Here](https://github.com/pravic/winapi-km-rs/tree/master/examples) is a three basic drivers.
+[Here](https://github.com/pravic/winapi-km-rs/tree/master/examples) is a three basic driver samples.
 
-----
 ## [Reference](http://pravic.github.io/winapi-km-rs/)
 
