@@ -1,8 +1,9 @@
 ## Windows Kernel-Mode Drivers written in Rust
 
-This library is just a proof-of-concept of windows kernel-mode drivers, which can be written in Rust programming language.
+This library is just a proof-of-concept of the windows kernel-mode drivers, which can be written in Rust programming language.
 
-It contains the types, constants and bindings for the [Windows Driver Kit](https://en.wikipedia.org/wiki/Windows_Driver_Kit) with target OS starting from Windows XP (x86/x64).
+It contains the types, constants and bindings for the [Windows Driver Kit](https://en.wikipedia.org/wiki/Windows_Driver_Kit)
+with target OS starting from Windows XP (x86/x64).
 
 
 ### Getting started
@@ -31,6 +32,9 @@ Try to compile example:
 cd km\examples\01.minimal\
 cargo build --release
 ```
+
+If linker fails with error *cannot open input file 'ntoskrnl.lib'*,
+open `kmd-env-rs/.cargo/config` file and replace `../../../` with the full path to the *kmd-env-rs* directory.
 
 
 ### Examples
