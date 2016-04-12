@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `IO_STACK_LOCATION` struct in crate `km`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, IO_STACK_LOCATION">
+
+    <title>km::irp::IO_STACK_LOCATION - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'><a href='../index.html'>km</a>::<wbr><a href='index.html'>irp</a></p><script>window.sidebarCurrent = {name: 'IO_STACK_LOCATION', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content struct">
+<h1 class='fqn'><span class='in-band'>Struct <a href='../index.html'>km</a>::<wbr><a href='index.html'>irp</a>::<wbr><a class='struct' href=''>IO_STACK_LOCATION</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a id='src-441' class='srclink' href='../../src/km/irp.rs.html#128-152' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct IO_STACK_LOCATION {
+    pub MajorFunction: u8,
+    pub MinorFunction: u8,
+    pub Flags: u8,
+    pub Control: u8,
+    pub Parameters: [<a class='type' href='../../km/basedef/type.PVOID.html' title='km::basedef::PVOID'>PVOID</a>; 4],
+    pub DeviceObject: <a class='type' href='../../km/device_object/type.PDEVICE_OBJECT.html' title='km::device_object::PDEVICE_OBJECT'>PDEVICE_OBJECT</a>,
+    pub FileObject: <a class='type' href='../../km/file_object/type.PFILE_OBJECT.html' title='km::file_object::PFILE_OBJECT'>PFILE_OBJECT</a>,
+    pub CompletionRoutine: <a class='type' href='../../km/device_object/type.PIO_COMPLETION_ROUTINE.html' title='km::device_object::PIO_COMPLETION_ROUTINE'>PIO_COMPLETION_ROUTINE</a>,
+    pub Context: <a class='type' href='../../km/basedef/type.PVOID.html' title='km::basedef::PVOID'>PVOID</a>,
+}</pre><div class='docblock'><p>I/O Stack Locations.</p>
+</div><h2 class='fields'>Fields</h2>
+<table><tr class='stab '>
+                             <td id='structfield.MajorFunction'><code>MajorFunction</code></td><td><div class='docblock'><p>The IRP major function code indicating the type of I/O operation to be performed.</p>
+</div></td></tr><tr class='stab '>
+                             <td id='structfield.MinorFunction'><code>MinorFunction</code></td><td><div class='docblock'><p>A subfunction code for <code>MajorFunction</code>.</p>
+</div></td></tr><tr class='stab '>
+                             <td id='structfield.Flags'><code>Flags</code></td><td><div class='docblock'><p>Request-type-specific values (see <a href="../device_object/enum.DEVICE_FLAGS.html">DEVICE_FLAGS</a>).</p>
+</div></td></tr><tr class='stab '>
+                             <td id='structfield.Control'><code>Control</code></td><td></td></tr><tr class='stab '>
+                             <td id='structfield.Parameters'><code>Parameters</code></td><td><div class='docblock'><p>A union that depends on the major and minor IRP function code values
+contained in <code>MajorFunction</code> and <code>MinorFunction</code>.</p>
+</div></td></tr><tr class='stab '>
+                             <td id='structfield.DeviceObject'><code>DeviceObject</code></td><td><div class='docblock'><p>A pointer to the driver-created <code>DEVICE_OBJECT</code> structure
+representing the target physical, logical, or virtual device for which this driver is to handle the IRP.</p>
+</div></td></tr><tr class='stab '>
+                             <td id='structfield.FileObject'><code>FileObject</code></td><td><div class='docblock'><p>A pointer to a <code>FILE_OBJECT</code> structure that represents the file object, if any, that is associated with <code>DeviceObject</code> pointer.</p>
+</div></td></tr><tr class='stab '>
+                             <td id='structfield.CompletionRoutine'><code>CompletionRoutine</code></td><td><div class='docblock'><p>The following routine is invoked depending on the flags in the above <code>Flags</code> field.</p>
+</div></td></tr><tr class='stab '>
+                             <td id='structfield.Context'><code>Context</code></td><td><div class='docblock'><p>The following is used to store the address of the context parameter that should be passed to the <code>CompletionRoutine</code>.</p>
+</div></td></tr></table><h2 id='methods'>Methods</h2><h3 class='impl'><code>impl <a class='struct' href='../../km/irp/struct.IO_STACK_LOCATION.html' title='km::irp::IO_STACK_LOCATION'>IO_STACK_LOCATION</a></code></h3><div class='impl-items'><h4 id='method.ParametersRead' class='method'><code>fn <a href='#method.ParametersRead' class='fnname'>ParametersRead</a>(&amp;mut self) -&gt; &amp;mut <a class='struct' href='../../km/irp/struct._IO_STACK_LOCATION_READ.html' title='km::irp::_IO_STACK_LOCATION_READ'>_IO_STACK_LOCATION_READ</a></code></h4>
+<div class='docblock'><p>Access parameters for <code>IRP_MJ_READ</code>.</p>
+</div></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "km";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../../jquery.js"></script>
+    <script src="../../main.js"></script>
+    
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>

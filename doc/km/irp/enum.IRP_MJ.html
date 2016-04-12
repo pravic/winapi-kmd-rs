@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `IRP_MJ` enum in crate `km`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, IRP_MJ">
+
+    <title>km::irp::IRP_MJ - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'><a href='../index.html'>km</a>::<wbr><a href='index.html'>irp</a></p><script>window.sidebarCurrent = {name: 'IRP_MJ', ty: 'enum', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content enum">
+<h1 class='fqn'><span class='in-band'>Enum <a href='../index.html'>km</a>::<wbr><a href='index.html'>irp</a>::<wbr><a class='enum' href=''>IRP_MJ</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a id='src-381' class='srclink' href='../../src/km/irp.rs.html#30-61' title='goto source code'>[src]</a></span></h1>
+<pre class='rust enum'>pub enum IRP_MJ {
+    CREATE,
+    CREATE_NAMED_PIPE,
+    CLOSE,
+    READ,
+    WRITE,
+    QUERY_INFORMATION,
+    SET_INFORMATION,
+    QUERY_EA,
+    SET_EA,
+    FLUSH_BUFFERS,
+    QUERY_VOLUME_INFORMATION,
+    SET_VOLUME_INFORMATION,
+    DIRECTORY_CONTROL,
+    FILE_SYSTEM_CONTROL,
+    DEVICE_CONTROL,
+    INTERNAL_DEVICE_CONTROL,
+    SHUTDOWN,
+    LOCK_CONTROL,
+    CLEANUP,
+    CREATE_MAILSLOT,
+    QUERY_SECURITY,
+    SET_SECURITY,
+    POWER,
+    SYSTEM_CONTROL,
+    DEVICE_CHANGE,
+    QUERY_QUOTA,
+    SET_QUOTA,
+    PNP,
+    MAXIMUM_FUNCTION,
+}</pre><div class='docblock'><p><code>IRP</code> Major Function Codes.</p>
+</div><h2 class='variants'>Variants</h2>
+<table class='variants_table'><tr><td id='variant.CREATE'><code>CREATE</code></td><td></td><td></td></tr><tr><td id='variant.CREATE_NAMED_PIPE'><code>CREATE_NAMED_PIPE</code></td><td></td><td></td></tr><tr><td id='variant.CLOSE'><code>CLOSE</code></td><td></td><td></td></tr><tr><td id='variant.READ'><code>READ</code></td><td></td><td></td></tr><tr><td id='variant.WRITE'><code>WRITE</code></td><td></td><td></td></tr><tr><td id='variant.QUERY_INFORMATION'><code>QUERY_INFORMATION</code></td><td></td><td></td></tr><tr><td id='variant.SET_INFORMATION'><code>SET_INFORMATION</code></td><td></td><td></td></tr><tr><td id='variant.QUERY_EA'><code>QUERY_EA</code></td><td></td><td></td></tr><tr><td id='variant.SET_EA'><code>SET_EA</code></td><td></td><td></td></tr><tr><td id='variant.FLUSH_BUFFERS'><code>FLUSH_BUFFERS</code></td><td></td><td></td></tr><tr><td id='variant.QUERY_VOLUME_INFORMATION'><code>QUERY_VOLUME_INFORMATION</code></td><td></td><td></td></tr><tr><td id='variant.SET_VOLUME_INFORMATION'><code>SET_VOLUME_INFORMATION</code></td><td></td><td></td></tr><tr><td id='variant.DIRECTORY_CONTROL'><code>DIRECTORY_CONTROL</code></td><td></td><td></td></tr><tr><td id='variant.FILE_SYSTEM_CONTROL'><code>FILE_SYSTEM_CONTROL</code></td><td></td><td></td></tr><tr><td id='variant.DEVICE_CONTROL'><code>DEVICE_CONTROL</code></td><td></td><td></td></tr><tr><td id='variant.INTERNAL_DEVICE_CONTROL'><code>INTERNAL_DEVICE_CONTROL</code></td><td></td><td></td></tr><tr><td id='variant.SHUTDOWN'><code>SHUTDOWN</code></td><td></td><td></td></tr><tr><td id='variant.LOCK_CONTROL'><code>LOCK_CONTROL</code></td><td></td><td></td></tr><tr><td id='variant.CLEANUP'><code>CLEANUP</code></td><td></td><td></td></tr><tr><td id='variant.CREATE_MAILSLOT'><code>CREATE_MAILSLOT</code></td><td></td><td></td></tr><tr><td id='variant.QUERY_SECURITY'><code>QUERY_SECURITY</code></td><td></td><td></td></tr><tr><td id='variant.SET_SECURITY'><code>SET_SECURITY</code></td><td></td><td></td></tr><tr><td id='variant.POWER'><code>POWER</code></td><td></td><td></td></tr><tr><td id='variant.SYSTEM_CONTROL'><code>SYSTEM_CONTROL</code></td><td></td><td></td></tr><tr><td id='variant.DEVICE_CHANGE'><code>DEVICE_CHANGE</code></td><td></td><td></td></tr><tr><td id='variant.QUERY_QUOTA'><code>QUERY_QUOTA</code></td><td></td><td></td></tr><tr><td id='variant.SET_QUOTA'><code>SET_QUOTA</code></td><td></td><td></td></tr><tr><td id='variant.PNP'><code>PNP</code></td><td></td><td></td></tr><tr><td id='variant.MAXIMUM_FUNCTION'><code>MAXIMUM_FUNCTION</code></td><td></td><td></td></tr></table></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "km";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../../jquery.js"></script>
+    <script src="../../main.js"></script>
+    
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>

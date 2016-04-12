@@ -1,0 +1,1 @@
+initSidebarItems({"enum":[["EVENT_TYPE","Specifies the event type."]],"fn":[["KeClearEvent",""],["KeInitializeEvent",""],["KeReadStateEvent",""],["KeResetEvent",""],["KeSetEvent",""]],"struct":[["KEVENT","Event object."]],"type":[["PKEVENT",""]]});

@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `IRP` struct in crate `km`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, IRP">
+
+    <title>km::irp::IRP - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'><a href='../index.html'>km</a>::<wbr><a href='index.html'>irp</a></p><script>window.sidebarCurrent = {name: 'IRP', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content struct">
+<h1 class='fqn'><span class='in-band'>Struct <a href='../index.html'>km</a>::<wbr><a href='index.html'>irp</a>::<wbr><a class='struct' href=''>IRP</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a id='src-411' class='srclink' href='../../src/km/irp.rs.html#65-111' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct IRP {
+    pub Type: u16,
+    pub Size: u16,
+    pub MdlAddress: <a class='type' href='../../km/basedef/type.PVOID.html' title='km::basedef::PVOID'>PVOID</a>,
+    pub Flags: u32,
+    pub SystemBuffer: <a class='type' href='../../km/basedef/type.PVOID.html' title='km::basedef::PVOID'>PVOID</a>,
+    pub ThreadListEntry: <a class='struct' href='../../km/basedef/struct.LIST_ENTRY.html' title='km::basedef::LIST_ENTRY'>LIST_ENTRY</a>,
+    pub IoStatus: <a class='struct' href='../../km/basedef/struct.IO_STATUS_BLOCK.html' title='km::basedef::IO_STATUS_BLOCK'>IO_STATUS_BLOCK</a>,
+    pub RequestorMode: <a class='enum' href='../../km/basedef/enum.KPROCESSOR_MODE.html' title='km::basedef::KPROCESSOR_MODE'>KPROCESSOR_MODE</a>,
+    pub PendingReturned: bool,
+    pub StackCount: i8,
+    pub CurrentLocation: i8,
+    pub Cancel: bool,
+    pub CancelIrql: <a class='type' href='../../km/irql/type.KIRQL.html' title='km::irql::KIRQL'>KIRQL</a>,
+    pub ApcEnvironment: u8,
+    pub AllocationFlags: u8,
+    pub UserIosb: <a class='type' href='../../km/basedef/type.PIO_STATUS_BLOCK.html' title='km::basedef::PIO_STATUS_BLOCK'>PIO_STATUS_BLOCK</a>,
+    pub UserEvent: <a class='type' href='../../km/event/type.PKEVENT.html' title='km::event::PKEVENT'>PKEVENT</a>,
+    pub UserApcRoutine: <a class='type' href='../../km/basedef/type.PIO_APC_ROUTINE.html' title='km::basedef::PIO_APC_ROUTINE'>PIO_APC_ROUTINE</a>,
+    pub UserApcContext: <a class='type' href='../../km/basedef/type.PVOID.html' title='km::basedef::PVOID'>PVOID</a>,
+    pub CancelRoutine: <a class='type' href='../../km/device_object/type.PDRIVER_CANCEL.html' title='km::device_object::PDRIVER_CANCEL'>PDRIVER_CANCEL</a>,
+    pub UserBuffer: <a class='type' href='../../km/basedef/type.PVOID.html' title='km::basedef::PVOID'>PVOID</a>,
+    pub Overlay: <a class='struct' href='../../km/irp/struct._IRP_OVERLAY.html' title='km::irp::_IRP_OVERLAY'>_IRP_OVERLAY</a>,
+}</pre><div class='docblock'><p>The <code>IRP</code> structure is a partial opaque structure that represents an I/O request packet.</p>
+</div><h2 class='fields'>Fields</h2>
+<table><tr class='stab '>
+                             <td id='structfield.Type'><code>Type</code></td><td></td></tr><tr class='stab '>
+                             <td id='structfield.Size'><code>Size</code></td><td></td></tr><tr class='stab '>
+                             <td id='structfield.MdlAddress'><code>MdlAddress</code></td><td><div class='docblock'><p>Pointer to an <code>MDL</code> describing a user buffer, if the driver is using direct I/O.</p>
+</div></td></tr><tr class='stab '>
+                             <td id='structfield.Flags'><code>Flags</code></td><td><div class='docblock'><p>Flags word - used to remember various flags.</p>
+</div></td></tr><tr class='stab '>
+                             <td id='structfield.SystemBuffer'><code>SystemBuffer</code></td><td><div class='docblock'><p>Pointer to a system-space buffer if the driver is using buffered I/O.</p>
+</div></td></tr><tr class='stab '>
+                             <td id='structfield.ThreadListEntry'><code>ThreadListEntry</code></td><td></td></tr><tr class='stab '>
+                             <td id='structfield.IoStatus'><code>IoStatus</code></td><td><div class='docblock'><p>I/O status - final status of operation.</p>
+</div></td></tr><tr class='stab '>
+                             <td id='structfield.RequestorMode'><code>RequestorMode</code></td><td><div class='docblock'><p>Indicates the execution mode of the original requester of the operation.</p>
+</div></td></tr><tr class='stab '>
+                             <td id='structfield.PendingReturned'><code>PendingReturned</code></td><td><div class='docblock'><p>If set to <code>TRUE</code>, a driver has marked the IRP pending.</p>
+</div></td></tr><tr class='stab '>
+                             <td id='structfield.StackCount'><code>StackCount</code></td><td><div class='docblock'><p>Stack state information.</p>
+</div></td></tr><tr class='stab '>
+                             <td id='structfield.CurrentLocation'><code>CurrentLocation</code></td><td><div class='docblock'><p>Stack state information.</p>
+</div></td></tr><tr class='stab '>
+                             <td id='structfield.Cancel'><code>Cancel</code></td><td><div class='docblock'><p>If set to <code>TRUE</code>, the IRP either is or should be canceled.</p>
+</div></td></tr><tr class='stab '>
+                             <td id='structfield.CancelIrql'><code>CancelIrql</code></td><td><div class='docblock'><p>Irql at which the cancel spinlock was acquired.</p>
+</div></td></tr><tr class='stab '>
+                             <td id='structfield.ApcEnvironment'><code>ApcEnvironment</code></td><td></td></tr><tr class='stab '>
+                             <td id='structfield.AllocationFlags'><code>AllocationFlags</code></td><td><div class='docblock'><p>Allocation control flags.</p>
+</div></td></tr><tr class='stab '>
+                             <td id='structfield.UserIosb'><code>UserIosb</code></td><td><div class='docblock'><p>User parameters.</p>
+</div></td></tr><tr class='stab '>
+                             <td id='structfield.UserEvent'><code>UserEvent</code></td><td></td></tr><tr class='stab '>
+                             <td id='structfield.UserApcRoutine'><code>UserApcRoutine</code></td><td></td></tr><tr class='stab '>
+                             <td id='structfield.UserApcContext'><code>UserApcContext</code></td><td></td></tr><tr class='stab '>
+                             <td id='structfield.CancelRoutine'><code>CancelRoutine</code></td><td><div class='docblock'><p>Contains the entry point for a driver-supplied <code>Cancel</code> routine to be called if the IRP is canceled.</p>
+</div></td></tr><tr class='stab '>
+                             <td id='structfield.UserBuffer'><code>UserBuffer</code></td><td><div class='docblock'><p>Contains the address of an output buffer for <code>IRP_MJ_DEVICE_CONTROL</code>.</p>
+</div></td></tr><tr class='stab '>
+                             <td id='structfield.Overlay'><code>Overlay</code></td><td><div class='docblock'><p>Kernel structures.</p>
+</div></td></tr></table><h2 id='methods'>Methods</h2><h3 class='impl'><code>impl <a class='struct' href='../../km/irp/struct.IRP.html' title='km::irp::IRP'>IRP</a></code></h3><div class='impl-items'><h4 id='method.get_current_stack_location' class='method'><code>fn <a href='#method.get_current_stack_location' class='fnname'>get_current_stack_location</a>(&amp;mut self) -&gt; &amp;mut <a class='struct' href='../../km/irp/struct.IO_STACK_LOCATION.html' title='km::irp::IO_STACK_LOCATION'>IO_STACK_LOCATION</a></code></h4>
+<div class='docblock'><p>Returns a pointer to the caller&#39;s stack location in the given <code>IRP</code>.</p>
+</div><h4 id='method.complete_request' class='method'><code>fn <a href='#method.complete_request' class='fnname'>complete_request</a>(&amp;mut self, Status: <a class='type' href='../../km/status/type.NTSTATUS.html' title='km::status::NTSTATUS'>NTSTATUS</a>) -&gt; <a class='type' href='../../km/status/type.NTSTATUS.html' title='km::status::NTSTATUS'>NTSTATUS</a></code></h4>
+<div class='docblock'><p>Indicates that the caller has completed all processing for a given I/O request
+and is returning the given IRP to the I/O manager.</p>
+</div></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "km";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../../jquery.js"></script>
+    <script src="../../main.js"></script>
+    
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>

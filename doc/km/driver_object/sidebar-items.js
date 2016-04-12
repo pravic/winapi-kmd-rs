@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["DRIVER_OBJECT","Represents the image of a loaded kernel-mode driver."]],"type":[["PDRIVER_INITIALIZE",""],["PDRIVER_STARTIO",""],["PDRIVER_UNLOAD",""]]});

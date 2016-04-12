@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `basedef` mod in crate `km`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, basedef">
+
+    <title>km::basedef - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'><a href='../index.html'>km</a></p><script>window.sidebarCurrent = {name: 'basedef', ty: 'mod', relpath: '../'};</script><script defer src="../sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content mod">
+<h1 class='fqn'><span class='in-band'>Module <a href='../index.html'>km</a>::<wbr><a class='mod' href=''>basedef</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a id='src-42' class='srclink' href='../../src/km/basedef.rs.html#1-91' title='goto source code'>[src]</a></span></h1>
+<div class='docblock'><p>Kernel-Mode Types.</p>
+</div><h2 id='modules' class='section-header'><a href="#modules">Modules</a></h2>
+<table>
+                       <tr class=' module-item'>
+                           <td><a class='mod' href='IO_PRIORITY/index.html'
+                                  title='km::basedef::IO_PRIORITY'>IO_PRIORITY</a></td>
+                           <td class='docblock short'>
+                                <p>I/O Request priority.</p>
+                           </td>
+                       </tr></table><h2 id='structs' class='section-header'><a href="#structs">Structs</a></h2>
+<table>
+                       <tr class=' module-item'>
+                           <td><a class='struct' href='struct.DISPATCHER_HEADER.html'
+                                  title='km::basedef::DISPATCHER_HEADER'>DISPATCHER_HEADER</a></td>
+                           <td class='docblock short'>
+                                <p>Common dispatcher object header.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='struct' href='struct.IO_STATUS_BLOCK.html'
+                                  title='km::basedef::IO_STATUS_BLOCK'>IO_STATUS_BLOCK</a></td>
+                           <td class='docblock short'>
+                                <p>An I/O status block.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='struct' href='struct.KSPIN_LOCK.html'
+                                  title='km::basedef::KSPIN_LOCK'>KSPIN_LOCK</a></td>
+                           <td class='docblock short'>
+                                <p>Spin Lock.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='struct' href='struct.LIST_ENTRY.html'
+                                  title='km::basedef::LIST_ENTRY'>LIST_ENTRY</a></td>
+                           <td class='docblock short'>
+                                <p>Doubly linked list structure.</p>
+                           </td>
+                       </tr></table><h2 id='enums' class='section-header'><a href="#enums">Enums</a></h2>
+<table>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.KPROCESSOR_MODE.html'
+                                  title='km::basedef::KPROCESSOR_MODE'>KPROCESSOR_MODE</a></td>
+                           <td class='docblock short'>
+                                <p>Processor modes.</p>
+                           </td>
+                       </tr></table><h2 id='functions' class='section-header'><a href="#functions">Functions</a></h2>
+<table>
+                       <tr class=' module-item'>
+                           <td><a class='fn' href='fn.KeGetCurrentIrql.html'
+                                  title='km::basedef::KeGetCurrentIrql'>KeGetCurrentIrql</a></td>
+                           <td class='docblock short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='fn' href='fn.KeRaiseIrqlToDpcLevel.html'
+                                  title='km::basedef::KeRaiseIrqlToDpcLevel'>KeRaiseIrqlToDpcLevel</a></td>
+                           <td class='docblock short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='fn' href='fn.KfLowerIrql.html'
+                                  title='km::basedef::KfLowerIrql'>KfLowerIrql</a></td>
+                           <td class='docblock short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='fn' href='fn.KfRaiseIrql.html'
+                                  title='km::basedef::KfRaiseIrql'>KfRaiseIrql</a></td>
+                           <td class='docblock short'>
+                                
+                           </td>
+                       </tr></table><h2 id='types' class='section-header'><a href="#types">Type Definitions</a></h2>
+<table>
+                       <tr class=' module-item'>
+                           <td><a class='type' href='type.PCVOID.html'
+                                  title='km::basedef::PCVOID'>PCVOID</a></td>
+                           <td class='docblock short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='type' href='type.PETHREAD.html'
+                                  title='km::basedef::PETHREAD'>PETHREAD</a></td>
+                           <td class='docblock short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='type' href='type.PIO_APC_ROUTINE.html'
+                                  title='km::basedef::PIO_APC_ROUTINE'>PIO_APC_ROUTINE</a></td>
+                           <td class='docblock short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='type' href='type.PIO_STATUS_BLOCK.html'
+                                  title='km::basedef::PIO_STATUS_BLOCK'>PIO_STATUS_BLOCK</a></td>
+                           <td class='docblock short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='type' href='type.PVOID.html'
+                                  title='km::basedef::PVOID'>PVOID</a></td>
+                           <td class='docblock short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='type' href='type.VOID.html'
+                                  title='km::basedef::VOID'>VOID</a></td>
+                           <td class='docblock short'>
+                                
+                           </td>
+                       </tr></table></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "km";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../../jquery.js"></script>
+    <script src="../../main.js"></script>
+    
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>

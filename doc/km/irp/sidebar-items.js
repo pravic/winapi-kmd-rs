@@ -1,0 +1,1 @@
+initSidebarItems({"enum":[["IRP_MJ","`IRP` Major Function Codes."]],"struct":[["IO_STACK_LOCATION","I/O Stack Locations."],["IRP","The `IRP` structure is a partial opaque structure that represents an I/O request packet."],["_IO_STACK_LOCATION_READ","Parameters for `IRP_MJ_READ`."],["_IRP_OVERLAY","Kernel structures for IRP."]],"type":[["PIO_STACK_LOCATION",""],["PIRP",""]]});

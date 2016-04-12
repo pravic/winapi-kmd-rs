@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `km` crate.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, km">
+
+    <title>km - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'></p><script>window.sidebarCurrent = {name: 'km', ty: 'mod', relpath: '../'};</script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content mod">
+<h1 class='fqn'><span class='in-band'>Crate <a class='mod' href=''>km</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a id='src-0' class='srclink' href='../src/km/lib.rs.html#1-55' title='goto source code'>[src]</a></span></h1>
+<div class='docblock'><p>Windows Kernel Mode library.</p>
+</div><h2 id='modules' class='section-header'><a href="#modules">Modules</a></h2>
+<table>
+                       <tr class=' module-item'>
+                           <td><a class='mod' href='basedef/index.html'
+                                  title='km::basedef'>basedef</a></td>
+                           <td class='docblock short'>
+                                <p>Kernel-Mode Types.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='mod' href='crt/index.html'
+                                  title='km::crt'>crt</a></td>
+                           <td class='docblock short'>
+                                <p>C runtime library.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='mod' href='debug/index.html'
+                                  title='km::debug'>debug</a></td>
+                           <td class='docblock short'>
+                                <p>Debugger support.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='mod' href='device_object/index.html'
+                                  title='km::device_object'>device_object</a></td>
+                           <td class='docblock short'>
+                                <p>Device Object.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='mod' href='dpc/index.html'
+                                  title='km::dpc'>dpc</a></td>
+                           <td class='docblock short'>
+                                <p>Deferred Procedure Calls (DPC).</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='mod' href='driver_object/index.html'
+                                  title='km::driver_object'>driver_object</a></td>
+                           <td class='docblock short'>
+                                <p>Driver Object.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='mod' href='event/index.html'
+                                  title='km::event'>event</a></td>
+                           <td class='docblock short'>
+                                <p>Event Objects.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='mod' href='file_object/index.html'
+                                  title='km::file_object'>file_object</a></td>
+                           <td class='docblock short'>
+                                <p>File Object.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='mod' href='irp/index.html'
+                                  title='km::irp'>irp</a></td>
+                           <td class='docblock short'>
+                                <p>I/O request packets (IRP).</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='mod' href='irql/index.html'
+                                  title='km::irql'>irql</a></td>
+                           <td class='docblock short'>
+                                <p>Interrupt Request Level (IRQL).</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='mod' href='macros/index.html'
+                                  title='km::macros'>macros</a></td>
+                           <td class='docblock short'>
+                                <p>Macros for Kernel-Mode drivers.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='mod' href='object/index.html'
+                                  title='km::object'>object</a></td>
+                           <td class='docblock short'>
+                                <p>Kernel Objects.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='mod' href='pool/index.html'
+                                  title='km::pool'>pool</a></td>
+                           <td class='docblock short'>
+                                <p>Kernel Mode pools.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='mod' href='rtl/index.html'
+                                  title='km::rtl'>rtl</a></td>
+                           <td class='docblock short'>
+                                <p>NT runtime routines.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='mod' href='status/index.html'
+                                  title='km::status'>status</a></td>
+                           <td class='docblock short'>
+                                <p>NT Status codes.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='mod' href='string/index.html'
+                                  title='km::string'>string</a></td>
+                           <td class='docblock short'>
+                                <p>Kernel mode string types.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='mod' href='time/index.html'
+                                  title='km::time'>time</a></td>
+                           <td class='docblock short'>
+                                <p>NT Time routines.</p>
+                           </td>
+                       </tr></table><h2 id='macros' class='section-header'><a href="#macros">Macros</a></h2>
+<table>
+                       <tr class=' module-item'>
+                           <td><a class='macro' href='macro.KdPrint!.html'
+                                  title='km::KdPrint!'>KdPrint!</a></td>
+                           <td class='docblock short'>
+                                <p>Macro to send a message to the kernel debugger.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='macro' href='macro.KdPrint_u!.html'
+                                  title='km::KdPrint_u!'>KdPrint_u!</a></td>
+                           <td class='docblock short'>
+                                <p>Macro to send a message to the kernel debugger for unsafe blocks.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='macro' href='macro.check_unsafe!.html'
+                                  title='km::check_unsafe!'>check_unsafe!</a></td>
+                           <td class='docblock short'>
+                                
+                           </td>
+                       </tr></table></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../";
+        window.currentCrate = "km";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../jquery.js"></script>
+    <script src="../main.js"></script>
+    
+    <script defer src="../search-index.js"></script>
+</body>
+</html>

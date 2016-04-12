@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["FILE_OBJECT","The `FILE_OBJECT` structure is used by the system to represent a file object."]],"type":[["PFILE_OBJECT",""]]});

@@ -1,0 +1,1 @@
+initSidebarItems({"enum":[["Status","NT Status code."]],"fn":[["check","Convert `Status` to `Result<()>`."]],"type":[["NTSTATUS","NT Status type."],["Result","A specialized `Result` type for NT operations."]]});

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `POOL_TYPE` enum in crate `km`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, POOL_TYPE">
+
+    <title>km::pool::POOL_TYPE - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'><a href='../index.html'>km</a>::<wbr><a href='index.html'>pool</a></p><script>window.sidebarCurrent = {name: 'POOL_TYPE', ty: 'enum', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content enum">
+<h1 class='fqn'><span class='in-band'>Enum <a href='../index.html'>km</a>::<wbr><a href='index.html'>pool</a>::<wbr><a class='enum' href=''>POOL_TYPE</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a id='src-524' class='srclink' href='../../src/km/pool.rs.html#21-42' title='goto source code'>[src]</a></span></h1>
+<pre class='rust enum'>pub enum POOL_TYPE {
+    NonPagedPool,
+    PagedPool,
+    NonPagedPoolMustSucceed,
+    DontUseThisType,
+    NonPagedPoolCacheAligned,
+    PagedPoolCacheAligned,
+    NonPagedPoolCacheAlignedMustS,
+    MaxPoolType,
+    NonPagedPoolSession,
+    PagedPoolSession,
+    NonPagedPoolMustSucceedSession,
+    DontUseThisTypeSession,
+    NonPagedPoolCacheAlignedSession,
+    PagedPoolCacheAlignedSession,
+    NonPagedPoolCacheAlignedMustSSession,
+}</pre><div class='docblock'><p>Specifies the type of system memory to allocate.</p>
+</div><h2 class='variants'>Variants</h2>
+<table class='variants_table'><tr><td id='variant.NonPagedPool'><code>NonPagedPool</code></td><td><div class='docblock'><p>Nonpageable system memory, can be accessed from any IRQL.</p>
+</div></td><td></td></tr><tr><td id='variant.PagedPool'><code>PagedPool</code></td><td><div class='docblock'><p>Pageable system memory, can only be allocated and accessed at IRQL &lt; DISPATCH_LEVEL.</p>
+</div></td><td></td></tr><tr><td id='variant.NonPagedPoolMustSucceed'><code>NonPagedPoolMustSucceed</code></td><td></td><td></td></tr><tr><td id='variant.DontUseThisType'><code>DontUseThisType</code></td><td></td><td></td></tr><tr><td id='variant.NonPagedPoolCacheAligned'><code>NonPagedPoolCacheAligned</code></td><td><div class='docblock'><p>Nonpaged pool, aligned on processor cache boundaries.</p>
+</div></td><td></td></tr><tr><td id='variant.PagedPoolCacheAligned'><code>PagedPoolCacheAligned</code></td><td><div class='docblock'><p>Paged pool, aligned on processor cache boundaries.</p>
+</div></td><td></td></tr><tr><td id='variant.NonPagedPoolCacheAlignedMustS'><code>NonPagedPoolCacheAlignedMustS</code></td><td></td><td></td></tr><tr><td id='variant.MaxPoolType'><code>MaxPoolType</code></td><td></td><td></td></tr><tr><td id='variant.NonPagedPoolSession'><code>NonPagedPoolSession</code></td><td></td><td></td></tr><tr><td id='variant.PagedPoolSession'><code>PagedPoolSession</code></td><td></td><td></td></tr><tr><td id='variant.NonPagedPoolMustSucceedSession'><code>NonPagedPoolMustSucceedSession</code></td><td></td><td></td></tr><tr><td id='variant.DontUseThisTypeSession'><code>DontUseThisTypeSession</code></td><td></td><td></td></tr><tr><td id='variant.NonPagedPoolCacheAlignedSession'><code>NonPagedPoolCacheAlignedSession</code></td><td></td><td></td></tr><tr><td id='variant.PagedPoolCacheAlignedSession'><code>PagedPoolCacheAlignedSession</code></td><td></td><td></td></tr><tr><td id='variant.NonPagedPoolCacheAlignedMustSSession'><code>NonPagedPoolCacheAlignedMustSSession</code></td><td></td><td></td></tr></table></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "km";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../../jquery.js"></script>
+    <script src="../../main.js"></script>
+    
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>

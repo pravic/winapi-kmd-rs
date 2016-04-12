@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `DEVICE_OBJECT` struct in crate `km`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, DEVICE_OBJECT">
+
+    <title>km::device_object::DEVICE_OBJECT - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'><a href='../index.html'>km</a>::<wbr><a href='index.html'>device_object</a></p><script>window.sidebarCurrent = {name: 'DEVICE_OBJECT', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content struct">
+<h1 class='fqn'><span class='in-band'>Struct <a href='../index.html'>km</a>::<wbr><a href='index.html'>device_object</a>::<wbr><a class='struct' href=''>DEVICE_OBJECT</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a id='src-217' class='srclink' href='../../src/km/device_object.rs.html#46-73' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct DEVICE_OBJECT {
+    pub Type: u16,
+    pub Size: u16,
+    pub ReferenceCount: i32,
+    pub DriverObject: *const <a class='struct' href='../../km/driver_object/struct.DRIVER_OBJECT.html' title='km::driver_object::DRIVER_OBJECT'>DRIVER_OBJECT</a>,
+    pub NextDevice: *mut <a class='struct' href='../../km/device_object/struct.DEVICE_OBJECT.html' title='km::device_object::DEVICE_OBJECT'>DEVICE_OBJECT</a>,
+    pub AttachedDevice: *mut <a class='struct' href='../../km/device_object/struct.DEVICE_OBJECT.html' title='km::device_object::DEVICE_OBJECT'>DEVICE_OBJECT</a>,
+    pub CurrentIrp: *const <a class='struct' href='../../km/irp/struct.IRP.html' title='km::irp::IRP'>IRP</a>,
+    pub Timer: *mut u8,
+    pub Flags: u32,
+    pub Characteristics: u32,
+    pub Vpb: *mut u8,
+    pub DeviceExtension: *mut u8,
+    pub DeviceType: u32,
+    pub StackSize: u8,
+    pub Queue: *mut <a class='struct' href='../../km/object/struct.WAIT_CONTEXT_BLOCK.html' title='km::object::WAIT_CONTEXT_BLOCK'>WAIT_CONTEXT_BLOCK</a>,
+    pub AlignmentRequirement: u32,
+    pub DeviceQueue: <a class='struct' href='../../km/object/struct.KDEVICE_QUEUE.html' title='km::object::KDEVICE_QUEUE'>KDEVICE_QUEUE</a>,
+    pub Dpc: <a class='struct' href='../../km/dpc/struct.KDPC.html' title='km::dpc::KDPC'>KDPC</a>,
+    pub ActiveThreadCount: u32,
+    pub SecurityDescriptor: *const u8,
+    pub DeviceLock: <a class='struct' href='../../km/event/struct.KEVENT.html' title='km::event::KEVENT'>KEVENT</a>,
+    pub SectorSize: u16,
+    pub Spare1: u16,
+    pub DeviceObjectExtension: *mut <a class='struct' href='../../km/device_object/struct.DEVOBJ_EXTENSION.html' title='km::device_object::DEVOBJ_EXTENSION'>DEVOBJ_EXTENSION</a>,
+    pub Reserved: *const u8,
+}</pre><div class='docblock'><p>The <code>DEVICE_OBJECT</code> structure is used by the operating system to represent a device object.</p>
+</div><h2 class='fields'>Fields</h2>
+<table><tr class='stab '>
+                             <td id='structfield.Type'><code>Type</code></td><td></td></tr><tr class='stab '>
+                             <td id='structfield.Size'><code>Size</code></td><td></td></tr><tr class='stab '>
+                             <td id='structfield.ReferenceCount'><code>ReferenceCount</code></td><td></td></tr><tr class='stab '>
+                             <td id='structfield.DriverObject'><code>DriverObject</code></td><td></td></tr><tr class='stab '>
+                             <td id='structfield.NextDevice'><code>NextDevice</code></td><td></td></tr><tr class='stab '>
+                             <td id='structfield.AttachedDevice'><code>AttachedDevice</code></td><td></td></tr><tr class='stab '>
+                             <td id='structfield.CurrentIrp'><code>CurrentIrp</code></td><td></td></tr><tr class='stab '>
+                             <td id='structfield.Timer'><code>Timer</code></td><td></td></tr><tr class='stab '>
+                             <td id='structfield.Flags'><code>Flags</code></td><td></td></tr><tr class='stab '>
+                             <td id='structfield.Characteristics'><code>Characteristics</code></td><td></td></tr><tr class='stab '>
+                             <td id='structfield.Vpb'><code>Vpb</code></td><td></td></tr><tr class='stab '>
+                             <td id='structfield.DeviceExtension'><code>DeviceExtension</code></td><td></td></tr><tr class='stab '>
+                             <td id='structfield.DeviceType'><code>DeviceType</code></td><td></td></tr><tr class='stab '>
+                             <td id='structfield.StackSize'><code>StackSize</code></td><td></td></tr><tr class='stab '>
+                             <td id='structfield.Queue'><code>Queue</code></td><td></td></tr><tr class='stab '>
+                             <td id='structfield.AlignmentRequirement'><code>AlignmentRequirement</code></td><td></td></tr><tr class='stab '>
+                             <td id='structfield.DeviceQueue'><code>DeviceQueue</code></td><td></td></tr><tr class='stab '>
+                             <td id='structfield.Dpc'><code>Dpc</code></td><td></td></tr><tr class='stab '>
+                             <td id='structfield.ActiveThreadCount'><code>ActiveThreadCount</code></td><td></td></tr><tr class='stab '>
+                             <td id='structfield.SecurityDescriptor'><code>SecurityDescriptor</code></td><td></td></tr><tr class='stab '>
+                             <td id='structfield.DeviceLock'><code>DeviceLock</code></td><td></td></tr><tr class='stab '>
+                             <td id='structfield.SectorSize'><code>SectorSize</code></td><td></td></tr><tr class='stab '>
+                             <td id='structfield.Spare1'><code>Spare1</code></td><td></td></tr><tr class='stab '>
+                             <td id='structfield.DeviceObjectExtension'><code>DeviceObjectExtension</code></td><td></td></tr><tr class='stab '>
+                             <td id='structfield.Reserved'><code>Reserved</code></td><td></td></tr></table></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "km";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../../jquery.js"></script>
+    <script src="../../main.js"></script>
+    
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>

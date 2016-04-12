@@ -1,0 +1,1 @@
+initSidebarItems({"fn":[["KeFlushQueuedDpcs",""],["KeGenericCallDpc",""],["KeInitializeDpc",""],["KeInsertQueueDpc",""],["KeRemoveQueueDpc",""]],"struct":[["KDPC","Deferred Procedure Call object."],["KDPC_DATA","DPC data structure definition."]],"type":[["PDEFERRED_ROUTINE",""]]});
