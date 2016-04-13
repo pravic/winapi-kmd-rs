@@ -27,6 +27,7 @@ pub mod irql;
 pub mod object;
 pub mod pool;
 pub mod rtl;
+pub mod shared;
 pub mod string;
 pub mod time;
 
