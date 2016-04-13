@@ -14,6 +14,9 @@ To compile you need the following:
 * MSVC itself, either VS 2015 or just MSVC Build Tools.
 * Rust environment for the Windows drivers: [kmd-env-rs](https://github.com/pravic/kmd-env-rs).
 
+As workaround you can compile drivers as `#[crate_type="staticlib"]` and link them manually (see *examples/03.urandom/build.cmd*).
+
+
 Setting up:
 
 ```
@@ -33,8 +36,8 @@ cd km\examples\01.minimal\
 cargo build --release
 ```
 
-If linker fails with error *cannot open input file 'ntoskrnl.lib'*,
-open `kmd-env-rs/.cargo/config` file and replace `../../../` with the full path to the *kmd-env-rs* directory.
+If linker fails with error "*cannot open input file 'ntoskrnl.lib'*",
+open `kmd-env-rs/.cargo/config` file and replace `../../../` with the full path to the "*kmd-env-rs*" directory.
 
 
 ### Examples
