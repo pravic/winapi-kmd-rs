@@ -4,10 +4,10 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="generator" content="rustdoc">
-    <meta name="description" content="API documentation for the Rust `RtlUnicodeStringToAnsiSize` fn in crate `km`.">
-    <meta name="keywords" content="rust, rustlang, rust-lang, RtlUnicodeStringToAnsiSize">
+    <meta name="description" content="API documentation for the Rust `ALTERNATIVE_ARCHITECTURE_TYPE` enum in crate `km`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, ALTERNATIVE_ARCHITECTURE_TYPE">
 
-    <title>km::string::RtlUnicodeStringToAnsiSize - Rust</title>
+    <title>km::shared::ALTERNATIVE_ARCHITECTURE_TYPE - Rust</title>
 
     <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
     <link rel="stylesheet" type="text/css" href="../../main.css">
@@ -28,7 +28,7 @@
 
     <nav class="sidebar">
         
-        <p class='location'><a href='../index.html'>km</a>::<wbr><a href='index.html'>string</a></p><script>window.sidebarCurrent = {name: 'RtlUnicodeStringToAnsiSize', ty: 'fn', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+        <p class='location'><a href='../index.html'>km</a>::<wbr><a href='index.html'>shared</a></p><script>window.sidebarCurrent = {name: 'ALTERNATIVE_ARCHITECTURE_TYPE', ty: 'enum', relpath: ''};</script><script defer src="sidebar-items.js"></script>
     </nav>
 
     <nav class="sub">
@@ -42,13 +42,18 @@
         </form>
     </nav>
 
-    <section id='main' class="content fn">
-<h1 class='fqn'><span class='in-band'><a href='../index.html'>km</a>::<wbr><a href='index.html'>string</a>::<wbr><a class='fn' href=''>RtlUnicodeStringToAnsiSize</a></span><span class='out-of-band'><span id='render-detail'>
+    <section id='main' class="content enum">
+<h1 class='fqn'><span class='in-band'>Enum <a href='../index.html'>km</a>::<wbr><a href='index.html'>shared</a>::<wbr><a class='enum' href=''>ALTERNATIVE_ARCHITECTURE_TYPE</a></span><span class='out-of-band'><span id='render-detail'>
                    <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
                        [<span class='inner'>&#x2212;</span>]
                    </a>
-               </span><a id='src-672' class='srclink' href='../../src/km/string.rs.html#82' title='goto source code'>[src]</a></span></h1>
-<pre class='rust fn'>pub unsafe extern "system" fn RtlUnicodeStringToAnsiSize(SourceString: &amp;<a class='type' href='../../km/string/type.CONST_UNICODE_STRING.html' title='km::string::CONST_UNICODE_STRING'>CONST_UNICODE_STRING</a>) -&gt; u32</pre></section>
+               </span><a id='src-567' class='srclink' href='../../src/km/shared.rs.html#27-32' title='goto source code'>[src]</a></span></h1>
+<pre class='rust enum'>pub enum ALTERNATIVE_ARCHITECTURE_TYPE {
+    StandardDesign,
+    NEC98x86,
+    EndAlternatives,
+}</pre><h2 class='variants'>Variants</h2>
+<table class='variants_table'><tr><td id='variant.StandardDesign'><code>StandardDesign</code></td><td></td><td></td></tr><tr><td id='variant.NEC98x86'><code>NEC98x86</code></td><td></td><td></td></tr><tr><td id='variant.EndAlternatives'><code>EndAlternatives</code></td><td></td><td></td></tr></table></section>
     <section id='search' class="content hidden"></section>
 
     <section class="footer"></section>

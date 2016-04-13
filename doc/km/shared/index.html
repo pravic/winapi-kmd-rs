@@ -4,10 +4,10 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="generator" content="rustdoc">
-    <meta name="description" content="API documentation for the Rust `time` mod in crate `km`.">
-    <meta name="keywords" content="rust, rustlang, rust-lang, time">
+    <meta name="description" content="API documentation for the Rust `shared` mod in crate `km`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, shared">
 
-    <title>km::time - Rust</title>
+    <title>km::shared - Rust</title>
 
     <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
     <link rel="stylesheet" type="text/css" href="../../main.css">
@@ -28,7 +28,7 @@
 
     <nav class="sidebar">
         
-        <p class='location'><a href='../index.html'>km</a></p><script>window.sidebarCurrent = {name: 'time', ty: 'mod', relpath: '../'};</script><script defer src="../sidebar-items.js"></script>
+        <p class='location'><a href='../index.html'>km</a></p><script>window.sidebarCurrent = {name: 'shared', ty: 'mod', relpath: '../'};</script><script defer src="../sidebar-items.js"></script>
     </nav>
 
     <nav class="sub">
@@ -43,33 +43,49 @@
     </nav>
 
     <section id='main' class="content mod">
-<h1 class='fqn'><span class='in-band'>Module <a href='../index.html'>km</a>::<wbr><a class='mod' href=''>time</a></span><span class='out-of-band'><span id='render-detail'>
+<h1 class='fqn'><span class='in-band'>Module <a href='../index.html'>km</a>::<wbr><a class='mod' href=''>shared</a></span><span class='out-of-band'><span id='render-detail'>
                    <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
                        [<span class='inner'>&#x2212;</span>]
                    </a>
-               </span><a id='src-698' class='srclink' href='../../src/km/time.rs.html#1-54' title='goto source code'>[src]</a></span></h1>
-<div class='docblock'><p>NT Time routines.</p>
-</div><h2 id='functions' class='section-header'><a href="#functions">Functions</a></h2>
+               </span><a id='src-549' class='srclink' href='../../src/km/shared.rs.html#1-153' title='goto source code'>[src]</a></span></h1>
+<div class='docblock'><p>Data shared between kernel and user mode.</p>
+</div><h2 id='structs' class='section-header'><a href="#structs">Structs</a></h2>
 <table>
                        <tr class=' module-item'>
-                           <td><a class='fn' href='fn.ExSystemTimeToLocalTime.html'
-                                  title='km::time::ExSystemTimeToLocalTime'>ExSystemTimeToLocalTime</a></td>
+                           <td><a class='struct' href='struct.KSYSTEM_TIME.html'
+                                  title='km::shared::KSYSTEM_TIME'>KSYSTEM_TIME</a></td>
                            <td class='docblock short'>
-                                <p>Converts a GMT system time value to the local system time for the current time zone.</p>
+                                <p>Dystem time structure</p>
                            </td>
                        </tr>
                        <tr class=' module-item'>
-                           <td><a class='fn' href='fn.QuerySystemTime.html'
-                                  title='km::time::QuerySystemTime'>QuerySystemTime</a></td>
+                           <td><a class='struct' href='struct.KUSER_SHARED_DATA.html'
+                                  title='km::shared::KUSER_SHARED_DATA'>KUSER_SHARED_DATA</a></td>
                            <td class='docblock short'>
-                                <p>Obtains the current system time.</p>
+                                <p>The data shared between kernel and user mode.</p>
+                           </td>
+                       </tr></table><h2 id='enums' class='section-header'><a href="#enums">Enums</a></h2>
+<table>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.ALTERNATIVE_ARCHITECTURE_TYPE.html'
+                                  title='km::shared::ALTERNATIVE_ARCHITECTURE_TYPE'>ALTERNATIVE_ARCHITECTURE_TYPE</a></td>
+                           <td class='docblock short'>
+                                
                            </td>
                        </tr>
                        <tr class=' module-item'>
-                           <td><a class='fn' href='fn.QueryTickCount.html'
-                                  title='km::time::QueryTickCount'>QueryTickCount</a></td>
+                           <td><a class='enum' href='enum.NT_PRODUCT_TYPE.html'
+                                  title='km::shared::NT_PRODUCT_TYPE'>NT_PRODUCT_TYPE</a></td>
                            <td class='docblock short'>
-                                <p>A count of the interval timer interrupts that have occurred since the system was booted.</p>
+                                
+                           </td>
+                       </tr></table><h2 id='types' class='section-header'><a href="#types">Type Definitions</a></h2>
+<table>
+                       <tr class=' module-item'>
+                           <td><a class='type' href='type.SYSTEMTIME.html'
+                                  title='km::shared::SYSTEMTIME'>SYSTEMTIME</a></td>
+                           <td class='docblock short'>
+                                <p>System time is a count of 100-nanosecond intervals since January 1, 1601.</p>
                            </td>
                        </tr></table></section>
     <section id='search' class="content hidden"></section>

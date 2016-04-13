@@ -1,0 +1,1 @@
+initSidebarItems({"enum":[["ALTERNATIVE_ARCHITECTURE_TYPE",""],["NT_PRODUCT_TYPE",""]],"struct":[["KSYSTEM_TIME","Dystem time structure"],["KUSER_SHARED_DATA","The data shared between kernel and user mode."]],"type":[["SYSTEMTIME","System time is a count of 100-nanosecond intervals since January 1, 1601."]]});
