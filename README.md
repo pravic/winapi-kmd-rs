@@ -50,4 +50,5 @@ See [examples](https://github.com/pravic/winapi-kmd-rs/tree/master/examples) fol
 
 #### Acknowledges
 
-In memory of [Four-F](http://four-f.narod.ru/) - the author of tutorials about kernel mode drivers development in assembly language (2002-2005).
+In memory of [Four-F](https://web.archive.org/web/20130530073702/http://www.freewebs.com/four-f/) - the author of tutorials about kernel mode drivers
+development in assembly language (2002-2005).
