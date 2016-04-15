@@ -25,7 +25,7 @@ git submodule init
 git submodule update --recursive
 ```
 
-Set the nightly-msvc Rust toolchain [for this](https://github.com/rust-lang-nursery/multirust-rs#directory-overrides) repository:
+[Set](https://github.com/rust-lang-nursery/multirust-rs#directory-overrides) the nightly-msvc Rust toolchain for this repository:
 
 `rustup override add nightly-i686-msvc`
 
