@@ -36,6 +36,23 @@ cd km\examples\01.minimal\
 cargo build --release
 ```
 
+By default, it compiles to x86 mode.
+If you need x64, either change `kmd-env-rs/.cargo/config` as following:
+
+```
+[build]
+target = "x86_64-sys-windows-msvc"
+...
+```
+
+or use [RUST_TARGET_PATH](https://github.com/rust-lang/rfcs/blob/master/text/0131-target-specification.md):
+
+```
+set RUST_TARGET_PATH=C:/path/to/kmd-env-rs/.cargo`
+cargo build --release --target i686-sys-windows-msvc
+cargo build --release --target x86_64-sys-windows-msvc
+```
+
 If linker fails with error "*cannot open input file 'ntoskrnl.lib'*",
 open `kmd-env-rs/.cargo/config` file and replace `../../../` with the full path to the "*kmd-env-rs*" directory.
 
