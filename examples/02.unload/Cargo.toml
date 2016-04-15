@@ -5,8 +5,7 @@ version = "0.1.0"
 authors = ["pravic <ehysta@gmail.com>"]
 readme = "../README.md"
 
-build = "build.rs"
-links = "ntoskrnl"
+build = "../build.rs"
 
 [lib]
 path = "driver.rs"
