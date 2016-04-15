@@ -53,8 +53,6 @@ cargo build --release --target i686-sys-windows-msvc
 cargo build --release --target x86_64-sys-windows-msvc
 ```
 
-If linker fails with error "*cannot open input file 'ntoskrnl.lib'*",
-open `kmd-env-rs/.cargo/config` file and replace `../../../` with the full path to the "*kmd-env-rs*" directory.
 
 
 ### Examples
