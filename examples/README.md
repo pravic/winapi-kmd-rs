@@ -1,3 +1,8 @@
+## Compatibility
+
+All examples tested against Windows XP SP3, Windows XP x64 SP2, Windows 7 x64 SP2, Windows 10 x64.
+
+
 ## 01.minimal
 
 Minimal Windows kernel driver written in Rust. [DriverEntry](https://msdn.microsoft.com/en-us/library/windows/hardware/ff544113%28v=vs.85%29.aspx) just prints `hello` and quits immediately.
