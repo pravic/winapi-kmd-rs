@@ -1,5 +1,7 @@
 ## Windows Kernel-Mode Drivers written in Rust
 
+[![Join the chat at https://gitter.im/pravic/winapi-kmd-rs](https://badges.gitter.im/pravic/winapi-kmd-rs.png)](https://gitter.im/pravic/winapi-kmd-rs)
+
 This library is just a proof-of-concept of the windows kernel-mode drivers, which can be written in Rust programming language.
 
 It contains the types, constants and bindings for the [Windows Driver Kit](https://en.wikipedia.org/wiki/Windows_Driver_Kit)
