@@ -73,7 +73,8 @@ pub type PIO_STATUS_BLOCK = *mut IO_STATUS_BLOCK;
 
 
 /// Processor modes.
-#[repr(C)]
+#[repr(u8)]
+#[derive(Copy, Clone)]
 pub enum KPROCESSOR_MODE
 {
 	KernelMode,
