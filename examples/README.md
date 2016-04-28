@@ -1,6 +1,6 @@
 ## Compatibility
 
-All examples tested against Windows XP SP3, Windows XP x64 SP2, Windows 7 x64 SP2, Windows 10 x64.
+All examples tested against Windows XP SP3, Windows XP x64 SP2, Windows 7 x64 SP2, Windows 10 x64 and ReactOS 0.4.0.
 
 
 ## 01.minimal
