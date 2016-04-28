@@ -1,6 +1,6 @@
 [package]
 name = "rust.drv.examples.minimal"
-description = "Minimal Windows kerneld driver sample."
+description = "Minimal Windows kernel driver sample."
 version = "0.1.0"
 authors = ["pravic <ehysta@gmail.com>"]
 readme = "../README.md"

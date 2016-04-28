@@ -1,6 +1,6 @@
 [package]
 name = "rust.drv.examples.urandom"
-description = "Windows kerneld driver sample which creates `\\\\.\\urandom` device."
+description = "Windows kernel driver sample which creates `\\\\.\\urandom` device."
 version = "0.1.0"
 authors = ["pravic <ehysta@gmail.com>"]
 readme = "../README.md"
