@@ -18,6 +18,12 @@ extern "system"
 {
 	fn IoCompleteRequest(Irp: PIRP, PriorityBoost: KPRIORITY_BOOST);
 
+	pub fn IoAllocateIrp(StackSize: CCHAR, ChargeQuota: bool) -> PIRP;
+	pub fn IoFreeIrp(Irp: PIRP);
+	pub fn IoReuseIrp(Irp: PIRP, Status: NTSTATUS);
+	pub fn IoInitializeIrp(Irp: PIRP, PacketSize: USHORT, StackSize: CCHAR);
+	pub fn IoMakeAssociatedIrp(Irp: PIRP, StackSize: CCHAR) -> PIRP;
+
 	// unfortunately following are macro
 	// fn IoGetCurrentIrpStackLocation(Irp: PIRP) -> PIO_STACK_LOCATION;
 	// fn IoGetNextIrpStackLocation(Irp: PIRP) -> PIO_STACK_LOCATION;
@@ -26,27 +32,46 @@ extern "system"
 }
 
 /// `IRP` Major Function Codes.
+///
+/// For information about these requests, see
+/// [IRP Major Function Codes](https://msdn.microsoft.com/en-us/library/windows/hardware/ff548603%28v=vs.85%29.aspx).
 #[repr(u8)]
 pub enum IRP_MJ
 {
+	/// The operating system sends this request to open a handle to a file object or device object.
 	CREATE,
 	CREATE_NAMED_PIPE,
+	/// Indicates that the last handle of the file object that is associated with the target device object
+	/// has been closed and released. All outstanding I/O requests have been completed or canceled.
+	/// See also `CLEANUP`.
 	CLOSE,
+	/// A user-mode application or Win32 component has requested a data transfer from the device.
+	/// Or a higher-level driver has created and set up the read IRP.
 	READ,
+	/// A user-mode application or Win32 component has requested a data transfer to the device.
+	/// Or a higher-level driver has created and set up the write IRP.
 	WRITE,
 	QUERY_INFORMATION,
 	SET_INFORMATION,
 	QUERY_EA,
 	SET_EA,
+	/// Indicates that the driver should flush the device's cache or its internal buffer,
+	/// or, possibly, should discard the data in its internal buffer.
 	FLUSH_BUFFERS,
 	QUERY_VOLUME_INFORMATION,
 	SET_VOLUME_INFORMATION,
 	DIRECTORY_CONTROL,
 	FILE_SYSTEM_CONTROL,
+	/// An user-mode thread has called the Microsoft Win32 `DeviceIoControl` function, or a higher-level kernel-mode driver has set up the request.
 	DEVICE_CONTROL,
+	/// Some driver calls either `IoBuildDeviceIoControlRequest` or `IoAllocateIrp` to create a request.
 	INTERNAL_DEVICE_CONTROL,
+	/// Indicates that a file system driver is sending notice that the system is being shut down.
 	SHUTDOWN,
 	LOCK_CONTROL,
+	/// Indicates that the last handle for a file object that is associated with the target device object has been closed
+	/// (but, due to outstanding I/O requests, might not have been released).
+	/// See also `CLOSE`.
 	CLEANUP,
 	CREATE_MAILSLOT,
 	QUERY_SECURITY,
@@ -123,6 +148,11 @@ pub struct _IRP_OVERLAY
 	pub OriginalFileObject: PFILE_OBJECT,
 }
 
+pub const SL_PENDING_RETURNED: u8 = 0x01;
+pub const SL_INVOKE_ON_CANCEL: u8 = 0x20;
+pub const SL_INVOKE_ON_SUCCESS: u8 = 0x40;
+pub const SL_INVOKE_ON_ERROR: u8 = 0x80;
+
 /// I/O Stack Locations.
 #[repr(C)]
 pub struct IO_STACK_LOCATION
@@ -133,6 +163,7 @@ pub struct IO_STACK_LOCATION
 	pub MinorFunction: u8,
 	/// Request-type-specific values (see [DEVICE_FLAGS](../device_object/enum.DEVICE_FLAGS.html)).
 	pub Flags: u8,
+	/// Stack location control flags.
 	pub Control: u8,
 
 	/// A union that depends on the major and minor IRP function code values
@@ -162,9 +193,26 @@ pub struct _IO_STACK_LOCATION_READ
 
 
 impl IRP {
+	pub fn new(StackSize: i8) -> PIRP {
+		unsafe { IoAllocateIrp(StackSize, false) }
+	}
+
+	pub fn with_quota(StackSize: i8) -> PIRP {
+		unsafe { IoAllocateIrp(StackSize, true) }
+	}
+
+	pub fn free(&mut self) {
+		unsafe { IoFreeIrp(self) };
+	}
+
 	/// Returns a pointer to the caller's stack location in the given `IRP`.
 	pub fn get_current_stack_location(&mut self) -> &mut IO_STACK_LOCATION {
 		unsafe { &mut *self.Overlay.CurrentStackLocation }
+	}
+
+	/// Returns a pointer to the next-lower-level driver's I/O stack location.
+	pub fn get_next_stack_location(&mut self) -> &mut IO_STACK_LOCATION {
+		unsafe { &mut *self.Overlay.CurrentStackLocation.offset(-1) }
 	}
 
 	/// Indicates that the caller has completed all processing for a given I/O request
@@ -173,6 +221,30 @@ impl IRP {
 		self.IoStatus.Status = Status;
 		unsafe { IoCompleteRequest(self, IO_NO_INCREMENT) };
 		return Status;
+	}
+
+	/// Registers an `IoCompletion` routine, which will be called when the next-lower-level driver
+	/// has completed the requested operation for the given IRP.
+	pub fn set_completion(&mut self, CompletionRoutine: PIO_COMPLETION_ROUTINE, Context: PVOID,
+			InvokeOnSuccess: bool, InvokeOnError: bool, InvokeOnCancel: bool)
+	{
+		let mut lower = self.get_next_stack_location();
+		lower.CompletionRoutine = CompletionRoutine;
+		lower.Context = Context;
+		lower.Control = 0;
+		if InvokeOnSuccess {
+			lower.Control |= SL_INVOKE_ON_SUCCESS;
+		}
+		if InvokeOnError {
+			lower.Control |= SL_INVOKE_ON_ERROR;
+		}
+		if InvokeOnCancel {
+			lower.Control |= SL_INVOKE_ON_CANCEL;
+		}
+	}
+
+	pub fn set_unconditional_completion(&mut self, CompletionRoutine: PIO_COMPLETION_ROUTINE, Context: PVOID) {
+		self.set_completion(CompletionRoutine, Context, true, true, true)
 	}
 }
 

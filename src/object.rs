@@ -3,7 +3,12 @@
 use ::basedef::*;
 use ::device_object::PDEVICE_OBJECT;
 use ::irp::IRP;
+use ::status::NTSTATUS;
 
+extern "system"
+{
+	pub fn KeWaitForSingleObject(Object: PVOID, WaitReason: u32, WaitMode: KPROCESSOR_MODE, Alertable: bool, Timeout: Option<&i64>) -> NTSTATUS;
+}
 
 #[repr(C)]
 pub struct WAIT_CONTEXT_BLOCK

@@ -70,7 +70,8 @@ pub type UnicodeString = UNICODE_STRING;
 pub type CONST_UNICODE_STRING = UNICODE_STRING;
 pub type CONST_ANSI_STRING = ANSI_STRING;
 
-
+pub type PUNICODE_STRING = *mut UNICODE_STRING;
+pub type PCUNICODE_STRING = *const UNICODE_STRING;
 
 extern "system"
 {

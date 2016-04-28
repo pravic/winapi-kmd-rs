@@ -2,7 +2,7 @@
 
 use ::{NTSTATUS, UNICODE_STRING};
 use ::driver_object::DRIVER_OBJECT;
-use ::irp::{IRP, PIRP};
+use ::irp::{IRP};
 use ::dpc::KDPC;
 use ::event::KEVENT;
 use ::object::*;
@@ -41,6 +41,15 @@ pub enum DEVICE_FLAGS {
 	DO_XIP                          = 0x00020000
 }
 
+/// `IoCompletion` routine result.
+#[repr(u32)]
+pub enum IO_COMPLETION_ROUTINE_RESULT {
+	// STATUS_SUCCESS
+	ContinueCompletion = 0,
+	// STATUS_MORE_PROCESSING_REQUIRED
+	StopCompletion = 0xC0000016,
+}
+
 /// The `DEVICE_OBJECT` structure is used by the operating system to represent a device object.
 #[repr(C)]
 pub struct DEVICE_OBJECT
@@ -72,6 +81,13 @@ pub struct DEVICE_OBJECT
 	pub Reserved: *const u8,
 }
 
+impl DEVICE_OBJECT {
+	/// Return a reference to driver-defined data structure.
+	pub fn extension<T>(&mut self) -> &mut T {
+		unsafe { &mut *(self.DeviceExtension as *mut T) }
+	}
+}
+
 /// Device object extension structure.
 #[repr(C)]
 pub struct DEVOBJ_EXTENSION
@@ -92,8 +108,8 @@ pub struct DEVOBJ_EXTENSION
 
 pub type PDEVICE_OBJECT = *mut DEVICE_OBJECT;
 
-pub type PDRIVER_CANCEL = Option<extern "system" fn (DeviceObject: PDEVICE_OBJECT, Irp: PIRP)>;
+pub type PDRIVER_CANCEL = Option<extern "system" fn (DeviceObject: &mut DEVICE_OBJECT, Irp: &mut IRP)>;
 
 pub type PDRIVER_DISPATCH = Option<extern "system" fn (DeviceObject: &mut DEVICE_OBJECT, Irp: &mut IRP) -> NTSTATUS>;
 
-pub type PIO_COMPLETION_ROUTINE = Option<extern "system" fn (DeviceObject: PDEVICE_OBJECT, Irp: PIRP, Context: PVOID) -> NTSTATUS>;
+pub type PIO_COMPLETION_ROUTINE = Option<extern "system" fn (DeviceObject: &mut DEVICE_OBJECT, Irp: &mut IRP, Context: PVOID) -> IO_COMPLETION_ROUTINE_RESULT>;
