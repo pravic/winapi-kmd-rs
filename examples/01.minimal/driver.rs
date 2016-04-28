@@ -8,9 +8,10 @@ use core::mem;
 use km::*;
 
 #[no_mangle]
-pub extern "system" fn DriverEntry(_obj: *mut km::DRIVER_OBJECT, _path: *const km::string::UnicodeString) -> Status
+pub extern "system" fn DriverEntry(driver: *mut km::DRIVER_OBJECT, _path: *const km::string::UnicodeString) -> Status
 {
 	KdPrint!("[rs] hello, rust!\n");
-	KdPrint!("[rs] we are DriverObject at 0x%p, sizeof %d\n", _obj, mem::size_of::<km::DRIVER_OBJECT>());
+	let cb = mem::size_of::<km::DRIVER_OBJECT>();
+	KdPrint!("[rs] we are DriverObject at 0x%p, sizeof 0x%X (%d bytes), expected size 0xA8 or 0x150\n", driver, cb, cb);
 	return Status::unsuccessful;	// return error to unload driver now
 }

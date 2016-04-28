@@ -7,8 +7,11 @@
 #[macro_use] extern crate collections;
 
 use km::*;
+use km::irp::IRP_MJ;
+
 use core::mem;
 use core::ptr;
+
 
 // Helper for converting b"string" to UNICODE_STRING
 fn a2u(s: &[u8]) -> UnicodeString {
@@ -71,7 +74,6 @@ pub extern "system" fn DriverEntry(driver: &mut km::DRIVER_OBJECT, _path: &km::s
 	}
 
 	// setup I/O processing handlers
-	use km::irp::IRP_MJ;
 	driver.MajorFunction[IRP_MJ::CREATE as usize] = Some(DispatchCreateClose);
 	driver.MajorFunction[IRP_MJ::CLOSE as usize] = Some(DispatchCreateClose);
 	driver.MajorFunction[IRP_MJ::READ as usize] = Some(DispatchRead);
@@ -106,7 +108,12 @@ extern "system" fn DriverUnload(driver: &mut km::DRIVER_OBJECT)
 }
 
 extern "system" fn DispatchCreateClose(_device: &mut DEVICE_OBJECT, irp: &mut IRP) -> NTSTATUS {
-	KdPrint!("[rs] dispatch create/close \n");
+	let code = { irp.get_current_stack_location().MajorFunction };
+	if code == IRP_MJ::CREATE as u8 {
+		KdPrint!("[rs] dispatch create\n");
+	} else {
+		KdPrint!("[rs] dispatch close\n");
+	}
 	irp.IoStatus.Information = 0;
 	return irp.complete_request(Status::success);
 }
