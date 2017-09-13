@@ -35,52 +35,41 @@ pub static __security_cookie: usize = 0x00002B992DDFA232;
 #[doc(hidden)]
 pub mod rust_intrinsics
 {
+	#![allow(unused_variables)]
+
 	// Idk why, but linker cannot find `_memcmp` for llvm intrinsics. So lets make forward one.
 	#[no_mangle]
-	pub unsafe extern fn memcmp(s1: *const u8, s2: *const u8, n: usize) -> i32 {
+	pub unsafe fn memcmp(s1: *const u8, s2: *const u8, n: usize) -> i32 {
 		return ::crt::memcmp(s1, s2, n);
 	}
 
 	// ported from compiler-rt
+	// pub fn __muldi3(a: u64, b: u64) -> u64 {
+	// 	unimplemented!();
+	// }
+
 	#[no_mangle]
-	pub unsafe extern fn __mulodi4(a: i64, b: i64, overflow: &mut i32) -> i64 {
-		const N: i32 = 64;
-		const MIN: i64 = 1 << (N-1);
-		const MAX: i64 = !MIN;
-		*overflow = 0;
+	pub fn __mulodi4(a: i64, b: i64, overflow: &mut i32) -> i64 {
+		unimplemented!();
+	}
 
-		let result = a * b;
-		if a == MIN {
-			if b != 0 && b != 1 {
-				*overflow = 1;
-			}
-			return result;
-		}
+	#[no_mangle]
+	pub extern "C" fn __multi3(a: i128, b: i128) -> i128 {
+		unimplemented!();
+	}
 
-		if b == MIN {
-			if a != 0 && a != 1 {
-				*overflow = 1;
-			}
-			return result;
-		}
+	#[no_mangle]
+	pub extern fn __muloti4(a: i128, b: i128, oflow: &mut i32) -> i128 {
+		unimplemented!();
+	}
 
-		let sa = a >> (N-1);
-		let sb = b >> (N-1);
-		let abs_a = (a ^ sa) - sa;
-		let abs_b = (b ^ sb) - sb;
+	#[no_mangle]
+	pub extern "C" fn __udivti3(n: u128, d: u128) -> u128 {
+		unimplemented!();
+	}
 
-		if abs_a < 2 || abs_b < 2 {
-			return result;
-		}
-		if sa == sb {
-			if abs_a > MAX / abs_b {
-				*overflow = 1;
-			}
-		} else {
-			if abs_a > MIN / -abs_b {
-				*overflow = 1;
-			}
-		}
-		return result;
+	#[no_mangle]
+	pub extern "C" fn __umodti3(n: u128, d: u128) -> u128 {
+		unimplemented!();
 	}
 }

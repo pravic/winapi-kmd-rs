@@ -3,6 +3,7 @@
 #![feature(lang_items)]
 #![feature(on_unimplemented, fundamental)]
 #![feature(no_core)]
+#![feature(i128_type)]
 
 #![no_std]
 #![allow(bad_style)]
