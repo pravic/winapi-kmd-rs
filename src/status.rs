@@ -17,6 +17,13 @@ pub enum Status {
 	unsuccessful = 0xC0000001,
 }
 
+impl ::core::default::Default for Status {
+	#[inline]
+	fn default() -> Status {
+		Status::success
+	}
+}
+
 impl Status {
 	/// Evaluates to `true` if the `Status` is a success type (`0..0x3FFFFFFF`)
 	/// or an informational type (`0x40000000..0x7FFFFFFF`).
