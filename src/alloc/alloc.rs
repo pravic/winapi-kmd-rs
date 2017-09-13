@@ -1,18 +1,21 @@
 //! Kernel Mode Allocator
 
-// The compiler needs to be instructed that this crate is an allocator in order
-// to realize that when this is linked in another allocator like jemalloc should
-// not be linked in
-#![feature(allocator)]
-#![allocator]
+#![crate_name = "alloc_system"]
+#![crate_type = "rlib"]
 
 // Allocators are not allowed to depend on the standard library which in turn
 // requires an allocator in order to avoid circular dependencies. This crate,
 // however, can use all of libcore.
 #![no_std]
 
-#![crate_name = "alloc_system"]
-#![crate_type = "rlib"]
+// The compiler needs to be instructed that this crate is an allocator in order
+// to realize that when this is linked in another allocator like jemalloc should
+// not be linked in
+#![feature(global_allocator)]
+#![feature(default_lib_allocator)]
+//#![allocator]
+
+
 
 mod pool;
 

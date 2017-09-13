@@ -13,3 +13,4 @@ test = false
 
 [dependencies]
 core = { path= "../../../libcore" }
+alloc = { path = "../../../liballoc" }
